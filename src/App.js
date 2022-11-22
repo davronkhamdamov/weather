@@ -4,8 +4,8 @@ import axios from 'axios';
 import c from './App.module.css';
 function App() {
   const [weatherValue, setWeathwerValue] = useState([]);
-  const [weatherData, setWeathwerData] = useState([]);
-  const [submit, setSubmit] = useState(true);
+  const [weatherData, setWeathwerData] = useState(null);
+  const [submit, setSubmit] = useState([]);
   useEffect(() => {
     axios(
       `https://api.openweathermap.org/data/2.5/weather?q=${weatherValue}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`
@@ -31,7 +31,7 @@ function App() {
         />
         <button
           onClick={() => {
-            setSubmit(submit ? false : true);
+            setSubmit(submit === [0] ? [1] : [0]);
           }}
         >
           Search
@@ -48,8 +48,13 @@ function App() {
             />
             <div className={c.weather}>
               <p className={c.weatherTemp}>
-                {Math.floor((weatherData?.main.temp - 32) * 0.5556)}°C |{' '}
-                {Math.round(weatherData?.main.temp)}°F
+                {weatherData
+                  ? Math.floor((weatherData?.main.temp - 32) * 0.5556) +
+                    '°C' +
+                    '|' +
+                    Math.round(weatherData?.main.temp) +
+                    '°F'
+                  : ''}
               </p>
               <p className={c.weatherMain}>{weatherData?.weather[0].main}</p>
             </div>
