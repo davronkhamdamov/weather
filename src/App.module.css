@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(./jpeg-optimizer-pexels-johannes-plenio-1118873.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: blur(8px);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.simple {
+  width: 500px;
+  height: 300px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.3)
+  );
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+}
+.simple input {
+  width: 300px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 17px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(221, 221, 221, 0.322);
+  color: rgba(255, 255, 255, 0.416);
+}
+.data {
+  width: 100%;
+  height: 30px;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.simple button {
+  width: 70px;
+  height: 35px;
+  margin: 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #eee;
+}
+.simple button:active {
+  background: blue;
+}
+.icon {
+  width: 50px;
+  margin-bottom: 20px;
+}
+.cityname {
+  font-size: 30px;
+  line-height: 40px;
+  margin: 10px;
+}
+.weatherMain {
+  font-size: 20px;
+}
+
+.weather {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.weatherTemp {
+  font-weight: 600;
+}
