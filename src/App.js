@@ -4,7 +4,7 @@ import axios from 'axios';
 import c from './App.module.css';
 function App() {
   const [weatherValue, setWeathwerValue] = useState([]);
-  const [weatherData, setWeathwerData] = useState(null);
+  const [weatherData, setWeathwerData] = useState([]);
   const [submit, setSubmit] = useState(true);
   useEffect(() => {
     axios(
