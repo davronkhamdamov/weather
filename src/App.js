@@ -3,7 +3,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import c from './App.module.css';
 function App() {
-  const [weatherValue, setWeathwerValue] = useState([]);
+  const [weatherValue, setWeathwerValue] = useState(null);
   const [weatherData, setWeathwerData] = useState(null);
   const [submit, setSubmit] = useState([]);
   useEffect(() => {
@@ -18,7 +18,7 @@ function App() {
       });
   }, [submit]);
   const inputValue = (e) => {
-    setWeathwerValue(e.target.value);
+    setWeathwerValue(e.target.value)?.trim();
   };
   return (
     <div className={c.simple}>
