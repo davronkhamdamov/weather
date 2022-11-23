@@ -3,13 +3,14 @@ import { useState } from 'react';
 import axios from 'axios';
 import c from './App.module.css';
 function App() {
-  const [weatherValue, setWeathwerValue] = useState(null);
+  const [weatherValue, setWeathwerValue] = useState('tashkent');
   const [weatherData, setWeathwerData] = useState(null);
   const [submit, setSubmit] = useState([]);
   useEffect(() => {
-    axios(
-      `https://api.openweathermap.org/data/2.5/weather?q=${weatherValue}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`
-    )
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${weatherValue}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`
+      )
       .then((res) => {
         if (res.status === 200) setWeathwerData(res.data);
       })
